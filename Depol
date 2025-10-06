@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- BASIC META -->
+  <meta charset="utf-8">
+  <title>DEPO Enterprises – We Do It All, We Do It Well</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DEPO Enterprises: barbering, graphic design, photography, movie downloads & on-demand delivery. Book and pay online in seconds.">
+  <meta name="keywords" content="Zambia barber, Lusaka graphic design, photography, movie download, delivery service">
+  <meta name="author" content="DEPO Enterprises">
+  <link rel="canonical" href="https://depoenterprises.com/">
+  <meta property="og:title" content="DEPO Enterprises – We Do It All, We Do It Well">
+  <meta property="og:description" content="One-stop creative & lifestyle hub. Book services and pay securely via PayPal, Airtel or MTN Money.">
+  <meta property="og:image" content="https://depoenterprises.com/assets/depo-logo-gold.png">
+  <meta property="og:type" content="website">
+
+  <!-- FAVICONS -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
+
+  <!-- PRELOAD CRITICAL FONT -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- INLINE CSS -->
+  <style>
+    :root{
+      --gold:#f9b233;
+      --black:#111;
+      --white:#fff;
+      --gray:#222;
+      --radius:8px;
+      --transition:.3s ease;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:var(--black);color:var(--white);line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    section{padding:80px 20px;max-width:1100px;margin:auto}
+    .btn{background:var(--gold);color:var(--black);padding:12px 28px;border-radius:var(--radius);font-weight:600;display:inline-block;transition:var(--transition)}
+    .btn:hover{filter:brightness(1.15)}
+    h1,h2,h3{line-height:1.2;margin-bottom:15px}
+    h1{font-size:2.4rem}h2{font-size:2rem}h3{font-size:1.3rem}
+    .fade-up{opacity:0;transform:translateY(30px);transition:all .6s}
+    .fade-up.visible{opacity:1;transform:none}
+    header{width:100%;position:fixed;top:0;left:0;z-index:999;background:rgba(0,0,0,.85);backdrop-filter:blur(5px)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:15px 20px}
+    .logo{font-weight:700;font-size:1.3rem;color:var(--gold)}
+    .nav-links{display:flex;gap:25px}
+    .nav-links a:hover{color:var(--gold)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .hamburger span{width:25px;height:3px;background:var(--white);transition:var(--transition)}
+    @media(max-width:768px){
+      .hamburger{display:flex}
+      .nav-links{position:absolute;top:60px;right:20px;background:var(--gray);flex-direction:column;padding:20px;border-radius:var(--radius);transform:translateX(200%);transition:var(--transition)}
+      .nav-links.open{transform:translateX(0)}
+    }
+    /* HERO */
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:url('https://source.unsplash.com/1600x900/?barber,design') center/cover no-repeat;position:relative}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.65)}
+    .hero > *{z-index:1}
+    .hero h1{font-size:3rem;margin-bottom:10px}
+    .hero p{font-size:1.2rem;margin-bottom:30px}
+    /* TEAM */
+    .team-grid{display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center}
+    .team-card{background:var(--gray);padding:25px;border-radius:var(--radius);transition:var(--transition)}
+    .team-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(249,178,51,.15)}
+    .team-card img{width:100px;height:100px;border-radius:50%;margin:0 auto 15px;object-fit:cover;border:3px solid var(--gold)}
+    /* SERVICES */
+    .service-grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .service-card{background:var(--gray);padding:30px;border-radius:var(--radius)}
+    .price{color:var(--gold);font-weight:700;font-size:1.1rem;margin-top:10px}
+    /* GALLERY */
+    .gallery-tabs{display:flex;gap:15px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
+    .gallery-tabs button{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)}
+    .gallery-tabs button.active{background:var(--gold);color:var(--black)}
+    .gallery-grid{display:grid;gap:15px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+    .gallery-grid img{border-radius:var(--radius);cursor:pointer;transition:var(--transition)}
+    .gallery-grid img:hover{transform:scale(1.03)}
+    /* BOOK & PAY */
+    form{display:grid;gap:18px;max-width:600px;margin:auto}
+    input,select,textarea{width:100%;padding:12px;border:none;border-radius:var(--radius);background:var(--gray);color:var(--white)}
+    input::placeholder,textarea::placeholder{color:#aaa}
+    #paypal-button-container{margin-top:20px}
+    /* TESTIMONIALS */
+    .testimonials{position:relative;overflow:hidden}
+    .testimonials > div{display:flex;transition:transform .5s}
+    .testimonial{min-width:100%;padding:20px;text-align:center}
+    .stars{color:var(--gold);margin-bottom:10px}
+    /* CONTACT */
+    .contact-wrapper{display:grid;gap:40px;grid-template-columns:1fr 1fr}
+    @media(max-width:768px){.contact-wrapper{grid-template-columns:1fr}}
+    .socials{display:flex;gap:20px;font-size:1.5rem}
+    .socials a:hover{color:var(--gold)}
+    footer{text-align:center;padding:20px;font-size:.85rem;color:#777}
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav aria-label="Primary">
+      <div class="logo">DEPO Enterprises</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#book">Book & Pay</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div>
+      <h1>We Do It All, We Do It Well.</h1>
+      <p>Barbering • Graphics • Photography • Movies • Delivery</p>
+      <a href="#services" class="btn">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <h2 class="fade-up">Meet The Squad</h2>
+    <div class="team-grid">
+      <div class="team-card fade-up">
+        <img src="assets/team/mr-p.jpg" alt="Mr. P">
+        <h3>Mr. P</h3>
+        <p>Founder / Master Barber</p>
+      </div>
+      <div class="team-card fade-up">
+        <img src="assets/team/edward.jpg" alt="Edward">
+        <h3>Edward</h3>
+        <p>Lead Graphic Designer</p>
+      </div>
+      <div class="team-card fade-up">
+        <img src="assets/team/chris.jpg" alt="Chris">
+        <h3>Chris</h3>
+        <p>Photography Head</p>
+      </div>
+      <div class="team-card fade-up">
+        <img src="assets/team/terrell.jpg" alt="Terrell">
+        <h3>Terrell</h3>
+        <p>Logistics & Delivery</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 class="fade-up">What We Offer</h2>
+    <div class="service-grid">
+      <div class="service-card fade-up">
+        <h3>Haircuts & Grooming</h3>
+        <p>Fresh fades, beard trims, hot-towel shaves. Home service available.</p>
+        <div class="price">ZMW 80 – 150</div>
+      </div>
+      <div class="service-card fade-up">
+        <h3>Graphic Design</h3>
+        <p>Logos, flyers, business cards, social-media kits. 24-hr express option.</p>
+        <div class="price">ZMW 250 – 800</div>
+      </div>
+      <div class="service-card fade-up">
+        <h3>Photography</h3>
+        <p>Portraits, events, product shots. Professional retouching included.</p>
+        <div class="price">ZMW 400 – 1 200</div>
+      </div>
+      <div class="service-card fade-up">
+        <h3>Movie Downloads</h3>
+        <p>Latest series & films in HD/4K. Delivered on flash or cloud link.</p>
+        <div class="price">ZMW 20 – 50</div>
+      </div>
+      <div class="service-card fade-up">
+        <h3>“Deliver Anything”</h3>
+        <p>Food, parcels, groceries—within Lusaka. Real-time tracking.</p>
+        <div class="price">From ZMW 50</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2 class="fade-up">Our Work</h2>
+    <div class="gallery-tabs">
+      <button class="tab-btn active" data-filter="barber">Barber</button>
+      <button class="tab-btn" data-filter="graphics">Graphics</button>
+      <button class="tab-btn" data-filter="photo">Photography</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- images injected by JS -->
+    </div>
+  </section>
+
+  <!-- BOOK & PAY -->
+  <section id="book">
+    <h2 class="fade-up">Book & Pay Online</h2>
+    <form id="bookingForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone (+260...)" required>
+      <select required>
+        <option value="">Select Service</option>
+        <option>Haircut / Grooming</option>
+        <option>Graphic Design</option>
+        <option>Photography</option>
+        <option>Movie Download</option>
+        <option>Delivery</option>
+      </select>
+      <input type="date" required>
+      <textarea rows="4" placeholder="Extra details..."></textarea>
+
+      <label>How would you like to pay?</label>
+      <label><input type="radio" name="pay" value="paypal" checked> PayPal</label>
+      <label><input type="radio" name="pay" value="mobile"> Airtel/MTN Money</label>
+
+      <!-- PayPal button will render here -->
+      <div id="paypal-button-container"></div>
+
+      <!-- Mobile money fields (hidden by default) -->
+      <div id="mobileFields" style="display:none">
+        <select required>
+          <option value="">Choose Network</option>
+          <option>Airtel Money</option>
+          <option>MTN Money</option>
+        </select>
+        <input type="text" placeholder="Mobile Money Number" pattern="[0-9]{10}">
+      </div>
+
+      <button type="submit" class="btn">Submit Booking</button>
+    </form>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2 class="fade-up">What Clients Say</h2>
+    <div id="testimonialSlider">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Best haircut I’ve had in years. Mr. P is a magician with the fade!”</p>
+        <strong>- Chanda M.</strong>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Edward designed my company logo in 24 hrs. Classy & professional.”</p>
+        <strong>- Bwalya K.</strong>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Fast delivery service. My groceries arrived in 35 minutes.”</p>
+        <strong>- Mumba T.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIVEAWAY BANNER -->
+  <section style="background:var(--gold);color:var(--black);text-align:center">
+    <h3>🎁  GIVEAWAY  🎁</h3>
+    <p>Stand a chance to <strong>win a free haircut + graphic tee</strong> every Friday.<br>
+      <a href="#contact" class="btn" style="background:var(--black);color:var(--gold);margin-top:10px">Enter via WhatsApp</a>
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="fade-up">Get In Touch</h2>
+    <div class="contact-wrapper">
+      <div>
+        <h3>Contact Details</h3>
+        <p><strong>Call / WhatsApp:</strong> <a href="https://wa.me/260970000000" target="_blank">+260 97 000 0000</a></p>
+        <p><strong>Email:</strong> hello@depoenterprises.com</p>
+        <p><strong>Physical:</strong> Arcades Mall, Lusaka, Zambia</p>
+        <div class="socials">
+          <a href="https://facebook.com/depoenterprises" aria-label="Facebook">📘</a>
+          <a href="https://instagram.com/depoenterprises" aria-label="Instagram">📷</a>
+          <a href="https://twitter.com/depoenterprises" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.9458859754!2d28.32113131446223!3d-15.432254789238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDI1JzU2LjEiUyAyOMKwMTknMjcuNiJF!5e0!3m2!1sen!2szm!4v1670000000000" width="100%" height="280" style="border:0;border-radius:var(--radius)" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="yr"></span> DEPO Enterprises. All rights reserved. Made with ❤️ in Lusaka.
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.onclick = () => navLinks.classList.toggle('open');
+
+    // fade-up observer
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>e.target.classList.toggle('visible',e.isIntersecting))
+    },{threshold:.2});
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+    // dynamic year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // gallery filter
+    const galleryData = {
+      barber:['barber1.jpg','barber2.jpg','barber3.jpg','barber4.jpg'],
+      graphics:['gfx1.jpg','gfx2.jpg','gfx3.jpg'],
+      photo:['photo1.jpg','photo2.jpg','photo3.jpg','photo4.jpg','photo5.jpg']
+    };
+    const galleryGrid = document.getElementById('galleryGrid');
+    const tabBtns     = document.querySelectorAll('.tab-btn');
+    function renderGallery(set){
+      galleryGrid.innerHTML='';
+      galleryData[set].forEach(src=>{
+        const img=new Image();
+        img.src=`assets/gallery/${set}/${src}`;
+        img.loading='lazy';
+        galleryGrid.appendChild(img);
+      });
+    }
+    tabBtns.forEach(btn=>btn.onclick=()=>{
+      tabBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGallery(btn.dataset.filter);
+    });
+    renderGallery('barber');
+
+    // testimonial slider
+    const slider = document.getElementById('testimonialSlider');
+    let index=0;
+    setInterval(()=>{
+      index=(index+1)%3;
+      slider.style.transform=`translateX(-${index*100}%)`;
+    },5000);
+
+    // payment toggle
+    const radios = document.querySelectorAll('input[name="pay"]');
+    const mobileBox = document.getElementById('mobileFields');
+    radios.forEach(r=>r.onchange=()=>{
+      mobileBox.style.display=(r.value==='mobile')?'block':'none';
+    });
+
+    // PayPal SDK (sandbox – swap client-id for live)
+    const loadPayPal=()=>{
+      const script=document.createElement('script');
+      script.src='https://www.paypal.com/sdk/js?client-id=AbCdEfGhIjKlMnOpQrStUvWxYz&currency=USD&intent=capture';
+      script.onload=()=>{
+        paypal.Buttons({
+          style:{color:'gold',shape:'rect'},
+          createOrder:(data,actions)=>actions.order.create({
+            purchase_units:[{amount:{value:'10.00'}}] // TODO dynamic price
+          }),
+          onApprove:(data,actions)=>actions.order.capture().then(details=>{
+            alert('Payment received, '+details.payer.name.given_name);
+            document.getElementById('bookingForm').reset();
+          })
+        }).render('#paypal-button-container');
+      };
+      document.body.appendChild(script);
+    };
+    loadPayPal();
+
+    // booking form submit
+    document.getElementById('bookingForm').onsubmit=async(e)=>{
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const data=Object.fromEntries(fd);
+      // TODO: POST to your serverless function
+      console.log('Booking:',data);
+      alert('Booking received! We will WhatsApp you shortly.');
+      e.target.reset();
+    };
+  </script>
+</body>
+</html>
